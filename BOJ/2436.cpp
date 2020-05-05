@@ -2,19 +2,11 @@
 using namespace std;
 #define INF 2e9
 
-/*
-참고할 것
-https://github.com/encrypted-def/BOJ/blob/master/2436.cpp
-갓킹독님 풀이.. 이렇게 푸는게 맞는 것 같다.
-*/
 
 int main() {
 	long long a ,b;
 	scanf("%lld%lld", &a, &b);
 	long long limit = b / a;
-	long long minsum = INF;
-	long long ans1, ans2;
-
 	/*
 		6 | x  y 
 	      -------
@@ -29,6 +21,9 @@ int main() {
 									 ㄴ나왔던게 또 나온다.
  	*/
 
+
+	long long ans1, ans2;
+
 	for (long long i = 1; i*i <= limit; i++)
 	{
 		if (limit % i != 0) continue;  //a*b==30에서 a가 4일 가능성은 0
@@ -40,15 +35,16 @@ int main() {
 			if ((limit / i) % j == 0) { //b(limit/i)가 a의 약수(j)로 나누어 떨어지면
 				flag = 1; break;		//이번에 선택한 a, b는 잘못되었다는 뜻
 			}
-		} //gcd를 이용해서 풀면, 갓갓킹독님 풀이와 같아진다.
+		}
 		if (flag) continue; 
-		long long tmp1 = i * a, tmp2 = (limit / i) * a;
-// 		if (minsum > tmp1 + tmp2) {
+		ans1 = i * a, ans2 = (limit / i) * a;
+	
+		//if (minsum > tmp1 + tmp2) {
 // 			minsum = tmp1 + tmp2;
 // 			ans1 = tmp1;
 // 			ans2 = tmp2;
 // 		}
-		// 없어도 되는 이유 : 어차피 답은 마지막에서 나온다
+		// 최솟값 찾는게 없어도 되는 이유 : 어차피 답은 마지막에서 나온다
 	}
 
 	printf("%lld %lld", ans1, ans2);

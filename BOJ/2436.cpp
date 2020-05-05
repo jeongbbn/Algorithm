@@ -1,8 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define INF 2e9
-
-
+/*
+참고할 것
+https://github.com/encrypted-def/BOJ/blob/master/2436.cpp
+갓킹독님 풀이.. 이렇게 푸는게 맞는 것 같다.
+*/
 int main() {
 	long long a ,b;
 	scanf("%lld%lld", &a, &b);
@@ -35,7 +38,8 @@ int main() {
 			if ((limit / i) % j == 0) { //b(limit/i)가 a의 약수(j)로 나누어 떨어지면
 				flag = 1; break;		//이번에 선택한 a, b는 잘못되었다는 뜻
 			}
-		}
+		}//gcd를 이용해서 풀면, 갓갓킹독님 풀이와 같아진다.
+
 		if (flag) continue; 
 		ans1 = i * a, ans2 = (limit / i) * a;
 	

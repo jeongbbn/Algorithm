@@ -40,14 +40,15 @@ int main() {
 			if ((limit / i) % j == 0) { //b(limit/i)가 a의 약수(j)로 나누어 떨어지면
 				flag = 1; break;		//이번에 선택한 a, b는 잘못되었다는 뜻
 			}
-		}
+		} //gcd를 이용해서 풀면, 갓갓킹독님 풀이와 같아진다.
 		if (flag) continue; 
 		long long tmp1 = i * a, tmp2 = (limit / i) * a;
-		if (minsum > tmp1 + tmp2) {
-			minsum = tmp1 + tmp2;
-			ans1 = tmp1;
-			ans2 = tmp2;
-		}
+// 		if (minsum > tmp1 + tmp2) {
+// 			minsum = tmp1 + tmp2;
+// 			ans1 = tmp1;
+// 			ans2 = tmp2;
+// 		}
+		// 없어도 되는 이유 : 어차피 답은 마지막에서 나온다
 	}
 
 	printf("%lld %lld", ans1, ans2);

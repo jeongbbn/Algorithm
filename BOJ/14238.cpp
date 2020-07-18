@@ -48,3 +48,4 @@ int main() {
 	dfs(0, 0, 0, 3, 3, "");
 	if (!endd) printf("-1");
 }
+ 

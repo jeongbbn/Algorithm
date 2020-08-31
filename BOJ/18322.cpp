@@ -1,9 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define INF 1e9
-typedef pair<int, int>pi;
-typedef pair<pair<int, int>, int>pii;
-typedef long long ll;
 
 int n, m;
 string str[105];

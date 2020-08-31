@@ -11,9 +11,8 @@ bool chk[10005];
 
 int main() {
 	scanf("%d", &n);
-	for (int i = 0; i < n - 1; i++) {
+	for (int i = 0; i < n - 1; i++)
 		scanf("%d", &b[i]);
-	}
 	
 	vector<int>ans;
 	for (int x = 1; x < b[0]; x++)

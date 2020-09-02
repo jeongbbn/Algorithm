@@ -1,0 +1,75 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define INF 1e9
+typedef pair<int, int>pi;
+typedef pair<pair<int, int>, int>pii;
+typedef long long ll;
+
+int n, m, a;
+int arr[305][305];
+
+void rotate(int l, int r, int t, int d) {
+	int bfr, nxt;
+	bfr = arr[t][r];
+	for (int i = r - 1; i >= l; i--)
+	{
+		nxt = arr[t][i];
+		arr[t][i] = bfr;
+		bfr = nxt;
+	}
+
+	for (int i = t + 1; i <= d; i++)
+	{
+		nxt = arr[i][l];
+		arr[i][l] = bfr;
+		bfr = nxt;
+	}
+
+	for (int i = l + 1; i <= r; i++)
+	{
+		nxt = arr[d][i];
+		arr[d][i] = bfr;
+		bfr = nxt;
+	}
+
+	for (int i = d - 1; i >= t; i--)
+	{
+		nxt = arr[i][r];
+		arr[i][r] = bfr;
+		bfr = nxt;
+	}
+}
+
+int main() {
+	scanf("%d%d%d", &n, &m, &a);
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= m; j++)
+		{
+			scanf("%d", &arr[i][j]);
+		}
+	}
+
+	int l = 1; 
+	int t = 1;
+	int r = m;
+	int d = n;
+
+	while (l < r && t < d) {
+		for (int i = 0; i < a; i++)
+			rotate(l, r, t, d);
+		l++;
+		t++;
+		d--;
+		r--;
+	}
+
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= m; j++)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+}

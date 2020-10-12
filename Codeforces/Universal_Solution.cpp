@@ -1,3 +1,7 @@
+/*
+Educational Codeforces Round 91 (Rated for Div. 2)
+B. Universal Solution
+*/
 #include<iostream>
 #include<string>
 #include<vector>

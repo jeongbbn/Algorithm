@@ -5,7 +5,10 @@
   이 때, s.length >= 2가 되면 s를 제대로 자를 수 없게 되므로 for문은 s.length/2까지만 돌면 된다.
   
   사용한 js 문법---------
-  substr(idx, cnt) : idx부터 cnt개까지 자름
+  s.substr(idx, cnt) : idx부터 cnt개까지 자름
+  -> cnt의 길이가 s의 길이를 넘어가면 idx부터 s의 끝까지만 반환한다.
+  idx의 범위가 넘어가도 오류를 내지 않는다.(그냥 빈 문자열만 반환한다.)
+  
   min, max : Math.min(A,B);
 */
 
